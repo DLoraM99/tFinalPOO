@@ -1,12 +1,21 @@
 package clases;
 
 public abstract class Persona {
-    protected String nombre;
-    protected String dni;
-    protected int edad;
-    protected String fechaNac;
-    protected String telefono;
-    protected String correo;
+    private int codigo;
+    private String nombre;
+    private String dni;
+    private int edad;
+    private String sexo;
+    private String telefono;
+    private String correo;
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
 
     public String getNombre() {
         return nombre;
@@ -24,20 +33,20 @@ public abstract class Persona {
         this.dni = dni;
     }
 
-    public Integer getEdad() {
+    public int getEdad() {
         return edad;
     }
 
-    public void setEdad(Integer edad) {
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
-    public String getFechaNac() {
-        return fechaNac;
+    public String getSexo() {
+        return sexo;
     }
 
-    public void setFechaNac(String fechaNac) {
-        this.fechaNac = fechaNac;
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
     public String getTelefono() {
