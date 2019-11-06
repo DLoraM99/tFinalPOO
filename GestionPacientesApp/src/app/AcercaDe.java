@@ -19,6 +19,7 @@ public class AcercaDe extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Acerca de");
+        setVisible(true);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Gestion de Nuevos Pacientes");
