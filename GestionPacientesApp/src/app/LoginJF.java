@@ -5,6 +5,8 @@
  */
 package app;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alumno
@@ -60,7 +62,12 @@ public class LoginJF extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton1.setText("Ingresar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 330, 120, 40));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 120, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
         jLabel5.setText("Sistema de Registro");
@@ -72,6 +79,46 @@ public class LoginJF extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Integer codigo= Integer.valueOf(jTextField1.getText()); 
+
+         
+
+        if(codigo/10000==1){ 
+
+            DoctorJF frame = new DoctorJF(); 
+
+            frame.setVisible(true); 
+
+            this.dispose(); 
+
+        }else if(codigo/10000==2){ 
+
+            EnfermeroJF frame = new EnfermeroJF(); 
+
+            frame.setVisible(true); 
+
+            this.dispose(); 
+
+        }else if(codigo/10000==3){ 
+
+            AdministrativoJF frame = new AdministrativoJF(); 
+
+            frame.setVisible(true); 
+
+            this.dispose(); 
+
+        }else{ 
+
+            JOptionPane.showMessageDialog(this, "Codigo incorrecto. Ingrese nuevamente"); 
+
+            jTextField1.setText(""); 
+
+            jPasswordField1.setText(""); 
+
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
