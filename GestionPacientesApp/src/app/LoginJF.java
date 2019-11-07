@@ -121,32 +121,32 @@ public class LoginJF extends javax.swing.JFrame {
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
             Integer codigo= Integer.valueOf(jTextField1.getText()); 
 
-        if(codigo/10000==1){ 
+            if(codigo/10000==1){ 
 
-            DoctorJF frame = new DoctorJF(); 
-            frame.setVisible(true);
-            frame.setExtendedState(DoctorJF.MAXIMIZED_BOTH);
-            this.dispose(); 
+                DoctorJF frame = new DoctorJF(); 
+                frame.setVisible(true);
+                frame.setExtendedState(DoctorJF.MAXIMIZED_BOTH);
+                this.dispose(); 
 
-        }else if(codigo/10000==2){ 
+            }else if(codigo/10000==2){ 
 
-            EnfermeroJF frame = new EnfermeroJF(); 
-            frame.setExtendedState(EnfermeroJF.MAXIMIZED_BOTH);
-            frame.setVisible(true);
-            this.dispose(); 
+                EnfermeroJF frame = new EnfermeroJF(); 
+                frame.setExtendedState(EnfermeroJF.MAXIMIZED_BOTH);
+                frame.setVisible(true);
+                this.dispose(); 
 
-        }else if(codigo/10000==3){ 
+            }else if(codigo/10000==3){ 
 
-            AdministrativoJF frame = new AdministrativoJF();
-            frame.setExtendedState(AdministrativoJF.MAXIMIZED_BOTH);
-            frame.setVisible(true);
-            this.dispose(); 
+                AdministrativoJF frame = new AdministrativoJF();
+                frame.setExtendedState(AdministrativoJF.MAXIMIZED_BOTH);
+                frame.setVisible(true);
+                this.dispose(); 
 
-        }else{ 
-            JOptionPane.showMessageDialog(this, "Código y/o contraseña incorrecto(s). Ingrese nuevamente."); 
-            jTextField1.setText(""); 
-            jPasswordField1.setText(""); 
-        }
+            }else{ 
+                JOptionPane.showMessageDialog(this, "Código y/o contraseña incorrecto(s). Ingrese nuevamente."); 
+                jTextField1.setText(""); 
+                jPasswordField1.setText(""); 
+            }
         }
     }//GEN-LAST:event_jPasswordField1KeyPressed
 
