@@ -3,6 +3,7 @@ package app;
 import javax.swing.JDesktopPane;
 import FramesAdmin.*;
 import javax.swing.JMenu;
+import javax.swing.JOptionPane;
 
 public class AdministrativoJF extends javax.swing.JFrame {
 
@@ -18,6 +19,10 @@ public class AdministrativoJF extends javax.swing.JFrame {
     private void RegistrarPaciente(){
         RegPacAdmin frame = new RegPacAdmin();
         jDesktopPane1.add(frame);
+    }
+    private void AcercaDe(){
+        AcercaDe frame = new AcercaDe();
+        jDesktopPane1.add(frame);        
     }
     
     @SuppressWarnings("unchecked")
@@ -237,13 +242,13 @@ public class AdministrativoJF extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         //CERRAR SESION
+        JOptionPane.showMessageDialog(this, "Su sesión ha sido cerrada con éxito.");
         dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         //ACERCA DE
-        AcercaDe frame = new AcercaDe();
-        jDesktopPane1.add(frame);
+        AcercaDe();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     

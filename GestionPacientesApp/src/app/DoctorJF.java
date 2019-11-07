@@ -19,6 +19,11 @@ public class DoctorJF extends javax.swing.JFrame {
     public DoctorJF() {
         initComponents();
     }
+    private void AcercaDe(){
+        AcercaDe frame = new AcercaDe();
+        jDesktopPane1.add(frame);
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -108,8 +113,7 @@ public class DoctorJF extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        AcercaDe frame = new AcercaDe();
-        jDesktopPane1.add(frame);
+        AcercaDe();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed

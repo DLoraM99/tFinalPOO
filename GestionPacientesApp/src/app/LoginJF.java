@@ -1,11 +1,12 @@
 package app;
 
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 public class LoginJF extends javax.swing.JFrame {
 
     /**
-     * Creates new form LoginJF
+     * Creates new form LoginJF https://www.youtube.com/watch?v=9WBIAUNNKCE
      */
     public LoginJF() {
         initComponents();
@@ -49,6 +50,16 @@ public class LoginJF extends javax.swing.JFrame {
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 160, -1));
 
         jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordField1ActionPerformed(evt);
+            }
+        });
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyPressed(evt);
+            }
+        });
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 160, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -101,6 +112,43 @@ public class LoginJF extends javax.swing.JFrame {
             jPasswordField1.setText(""); 
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+            Integer codigo= Integer.valueOf(jTextField1.getText()); 
+
+        if(codigo/10000==1){ 
+
+            DoctorJF frame = new DoctorJF(); 
+            frame.setVisible(true);
+            frame.setExtendedState(DoctorJF.MAXIMIZED_BOTH);
+            this.dispose(); 
+
+        }else if(codigo/10000==2){ 
+
+            EnfermeroJF frame = new EnfermeroJF(); 
+            frame.setExtendedState(EnfermeroJF.MAXIMIZED_BOTH);
+            frame.setVisible(true);
+            this.dispose(); 
+
+        }else if(codigo/10000==3){ 
+
+            AdministrativoJF frame = new AdministrativoJF();
+            frame.setExtendedState(AdministrativoJF.MAXIMIZED_BOTH);
+            frame.setVisible(true);
+            this.dispose(); 
+
+        }else{ 
+            JOptionPane.showMessageDialog(this, "Código y/o contraseña incorrecto(s). Ingrese nuevamente."); 
+            jTextField1.setText(""); 
+            jPasswordField1.setText(""); 
+        }
+        }
+    }//GEN-LAST:event_jPasswordField1KeyPressed
 
     /**
      * @param args the command line arguments

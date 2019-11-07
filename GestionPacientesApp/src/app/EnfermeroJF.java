@@ -18,8 +18,7 @@ public class EnfermeroJF extends javax.swing.JFrame {
     
     private void AcercaDe(){
         AcercaDe frame = new AcercaDe();
-        jDesktopPane1.add(frame);
-        
+        jDesktopPane1.add(frame);        
     }
     
     @SuppressWarnings("unchecked")
@@ -131,8 +130,7 @@ public class EnfermeroJF extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        AcercaDe frame = new AcercaDe();
-        jDesktopPane1.add(frame);
+        AcercaDe();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
