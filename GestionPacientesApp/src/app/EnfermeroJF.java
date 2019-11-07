@@ -9,7 +9,6 @@ public class EnfermeroJF extends javax.swing.JFrame {
      */
     public EnfermeroJF() {
         initComponents();
-        
     }
     private void RegistrarPaciente(){
         RegistrarPaciente frame = new RegistrarPaciente();
@@ -37,7 +36,6 @@ public class EnfermeroJF extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sesión iniciada como Enfermero(a)");
-        setAlwaysOnTop(true);
         setPreferredSize(new java.awt.Dimension(600, 500));
 
         jDesktopPane2.setPreferredSize(new java.awt.Dimension(600, 500));
