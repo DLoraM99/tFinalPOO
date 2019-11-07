@@ -83,43 +83,31 @@ public class LoginJF extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Integer codigo= Integer.valueOf(jTextField1.getText()); 
 
-         
-
         if(codigo/10000==1){ 
 
             DoctorJF frame = new DoctorJF(); 
-
             frame.setVisible(true);
             frame.setExtendedState(DoctorJF.MAXIMIZED_BOTH);
-
             this.dispose(); 
 
         }else if(codigo/10000==2){ 
 
             EnfermeroJF frame = new EnfermeroJF(); 
             frame.setExtendedState(EnfermeroJF.MAXIMIZED_BOTH);
-
-            frame.setVisible(true); 
-
+            frame.setVisible(true);
             this.dispose(); 
 
         }else if(codigo/10000==3){ 
 
             AdministrativoJF frame = new AdministrativoJF();
             frame.setExtendedState(AdministrativoJF.MAXIMIZED_BOTH);
-
-            frame.setVisible(true); 
-
+            frame.setVisible(true);
             this.dispose(); 
 
         }else{ 
-
-            JOptionPane.showMessageDialog(this, "Codigo incorrecto. Ingrese nuevamente"); 
-
+            JOptionPane.showMessageDialog(this, "Código y/o contraseña incorrecto(s). Ingrese nuevamente."); 
             jTextField1.setText(""); 
-
             jPasswordField1.setText(""); 
-
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

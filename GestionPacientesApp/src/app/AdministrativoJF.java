@@ -42,7 +42,7 @@ public class AdministrativoJF extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Administrativo");
+        setTitle("Sesión iniciada como Administrativo(a)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setName("Administrativo"); // NOI18N
 
