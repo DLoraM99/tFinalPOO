@@ -43,6 +43,7 @@ public class AdministrativoJF extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Administrativo");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setName("Administrativo"); // NOI18N
 
         jButton1.setText("Ver Pacientes");

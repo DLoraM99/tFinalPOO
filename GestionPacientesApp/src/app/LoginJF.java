@@ -89,13 +89,15 @@ public class LoginJF extends javax.swing.JFrame {
 
             DoctorJF frame = new DoctorJF(); 
 
-            frame.setVisible(true); 
+            frame.setVisible(true);
+            frame.setExtendedState(DoctorJF.MAXIMIZED_BOTH);
 
             this.dispose(); 
 
         }else if(codigo/10000==2){ 
 
             EnfermeroJF frame = new EnfermeroJF(); 
+            frame.setExtendedState(EnfermeroJF.MAXIMIZED_BOTH);
 
             frame.setVisible(true); 
 
@@ -103,7 +105,8 @@ public class LoginJF extends javax.swing.JFrame {
 
         }else if(codigo/10000==3){ 
 
-            AdministrativoJF frame = new AdministrativoJF(); 
+            AdministrativoJF frame = new AdministrativoJF();
+            frame.setExtendedState(AdministrativoJF.MAXIMIZED_BOTH);
 
             frame.setVisible(true); 
 
