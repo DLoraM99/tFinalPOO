@@ -14,15 +14,18 @@ public class AdministrativoJF extends javax.swing.JFrame {
     private void VerPaciente(String doctor) {
         PacientesXDoctor frame = new PacientesXDoctor();
         jDesktopPane1.add(frame);
+        frame.moveToFront();
     }
     
     private void RegistrarPaciente(){
         RegPacAdmin frame = new RegPacAdmin();
         jDesktopPane1.add(frame);
+        frame.moveToFront();
     }
     private void AcercaDe(){
         AcercaDe frame = new AcercaDe();
-        jDesktopPane1.add(frame);        
+        jDesktopPane1.add(frame); 
+        frame.moveToFront();
     }
     
     @SuppressWarnings("unchecked")

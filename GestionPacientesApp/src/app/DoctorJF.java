@@ -17,12 +17,13 @@ public class DoctorJF extends javax.swing.JFrame {
         private void Listado(){
         Listado frame = new Listado();
         jDesktopPane1.add(frame);
+        frame.moveToFront();
     }
     
     private void AcercaDe(){
         AcercaDe frame = new AcercaDe();
         jDesktopPane1.add(frame);
-        
+        frame.moveToFront();
     }
 
     

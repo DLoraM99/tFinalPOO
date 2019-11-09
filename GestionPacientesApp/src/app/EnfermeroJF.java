@@ -14,11 +14,13 @@ public class EnfermeroJF extends javax.swing.JFrame {
     private void RegistrarPaciente(){
         RegistrarPaciente frame = new RegistrarPaciente();
         jDesktopPane1.add(frame);
+        frame.moveToFront();
     }
     
     private void AcercaDe(){
         AcercaDe frame = new AcercaDe();
-        jDesktopPane1.add(frame);        
+        jDesktopPane1.add(frame);
+        frame.moveToFront();
     }
     
     @SuppressWarnings("unchecked")
