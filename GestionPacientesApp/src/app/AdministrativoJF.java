@@ -53,6 +53,7 @@ public class AdministrativoJF extends javax.swing.JFrame {
         setTitle("Sesión iniciada como Administrativo(a)");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setName("Administrativo"); // NOI18N
+        setResizable(false);
 
         jButton1.setText("Ver Pacientes");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +69,7 @@ public class AdministrativoJF extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Doctor 1", "Doctor 2", "Doctor 3", "Doctor 4", "Doctor 5" }));
 
         jButton3.setText("Cerrar sesión");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -91,7 +92,7 @@ public class AdministrativoJF extends javax.swing.JFrame {
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
                 .addComponent(jButton2)
                 .addGap(42, 42, 42)
                 .addComponent(jButton3)

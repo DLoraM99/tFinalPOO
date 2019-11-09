@@ -84,8 +84,15 @@ public class LoginJF extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Integer codigo= Integer.valueOf(jTextField1.getText()); 
-
+        Integer codigo=0;
+        try{
+            codigo= Integer.valueOf(jTextField1.getText());
+        }catch(NumberFormatException e){
+            //JOptionPane.showMessageDialog(this, "Debe ingresar un código numérico. Ingrese nuevamente."); 
+            jTextField1.setText(""); 
+            jPasswordField1.setText("");
+        }
+         
         if(codigo/10000==1){ 
 
             DoctorJF frame = new DoctorJF(); 
@@ -120,7 +127,14 @@ public class LoginJF extends javax.swing.JFrame {
 
     private void jPasswordField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_ENTER){
-            Integer codigo= Integer.valueOf(jTextField1.getText()); 
+            Integer codigo=0;
+            try{
+                codigo= Integer.valueOf(jTextField1.getText());
+            }catch(NumberFormatException e){
+                //JOptionPane.showMessageDialog(this, "Debe ingresar un código numérico. Ingrese nuevamente."); 
+                jTextField1.setText(""); 
+                jPasswordField1.setText("");
+            } 
 
             if(codigo/10000==1){ 
 

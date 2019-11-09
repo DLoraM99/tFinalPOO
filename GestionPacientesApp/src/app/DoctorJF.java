@@ -47,6 +47,7 @@ public class DoctorJF extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sesión iniciada como Doctor(a)");
         setPreferredSize(new java.awt.Dimension(600, 500));
+        setResizable(false);
 
         jButton1.setText("Cerrar Sesión");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

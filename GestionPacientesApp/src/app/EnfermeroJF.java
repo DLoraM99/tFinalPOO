@@ -40,6 +40,7 @@ public class EnfermeroJF extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sesión iniciada como Enfermero(a)");
         setAlwaysOnTop(true);
+        setResizable(false);
 
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(600, 500));
 
