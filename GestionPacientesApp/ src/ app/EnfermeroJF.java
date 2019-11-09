@@ -22,7 +22,7 @@ public class EnfermeroJF extends javax.swing.JFrame {
     }
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
@@ -30,12 +30,14 @@ public class EnfermeroJF extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sesión iniciada como Enfermero(a)");
+        setAlwaysOnTop(true);
 
         jDesktopPane1.setPreferredSize(new java.awt.Dimension(600, 500));
 
@@ -78,6 +80,15 @@ public class EnfermeroJF extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Registro");
+
+        jMenuItem3.setText("Lista de Pacientes");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Ayuda");
@@ -114,24 +125,34 @@ public class EnfermeroJF extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        //VER REGISTRO DE PACIENTES
         RegistrarPaciente();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }                                        
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        //CERRAR SESION
         JOptionPane.showMessageDialog(this, "Su sesión ha sido cerrada con éxito.");
         dispose();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }                                        
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        //CERRAR SESION
+        JOptionPane.showMessageDialog(this, "Su sesión ha sido cerrada con éxito.");
+        dispose();
+    }                                          
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        //ACERCA DE
         AcercaDe();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }                                          
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        //VER REGISTRO DE PACIENTES
+        RegistrarPaciente();
+    }                                          
 
     /**
      * @param args the command line arguments
@@ -169,7 +190,7 @@ public class EnfermeroJF extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JDesktopPane jDesktopPane1;
@@ -178,5 +199,6 @@ public class EnfermeroJF extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    // End of variables declaration//GEN-END:variables
+    private javax.swing.JMenuItem jMenuItem3;
+    // End of variables declaration                   
 }
