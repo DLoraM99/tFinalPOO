@@ -22,6 +22,14 @@ public class DoctorJF extends javax.swing.JFrame {
         jDesktopPane1.add(frame);
         frame.moveToFront();
     }
+    
+    private void CerrarSesion(){
+        JOptionPane.showMessageDialog(this, "Su sesión ha sido cerrada con éxito.");
+        dispose();
+        
+        LoginJF frame = new LoginJF();
+        frame.setVisible(true);
+    }
 
     
     @SuppressWarnings("unchecked")
@@ -155,8 +163,7 @@ public class DoctorJF extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         //CERRAR SESION
-        JOptionPane.showMessageDialog(this, "Su sesión ha sido cerrada con éxito.");
-        this.dispose();
+        CerrarSesion();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -166,8 +173,7 @@ public class DoctorJF extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //CERRAR SESION
-        JOptionPane.showMessageDialog(this, "Su sesión ha sido cerrada con éxito.");
-        dispose();
+        CerrarSesion();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

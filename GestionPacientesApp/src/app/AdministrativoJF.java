@@ -29,6 +29,14 @@ public class AdministrativoJF extends javax.swing.JFrame {
         frame.moveToFront();
     }
     
+    private void CerrarSesion(){
+        JOptionPane.showMessageDialog(this, "Su sesión ha sido cerrada con éxito.");
+        dispose();
+        
+        LoginJF frame = new LoginJF();
+        frame.setVisible(true);
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -223,7 +231,7 @@ public class AdministrativoJF extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         //CERRAR SESION
-        dispose();
+        CerrarSesion();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -263,8 +271,7 @@ public class AdministrativoJF extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         //CERRAR SESION
-        JOptionPane.showMessageDialog(this, "Su sesión ha sido cerrada con éxito.");
-        dispose();
+        CerrarSesion();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
