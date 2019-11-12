@@ -93,7 +93,6 @@ public class LoginJF extends javax.swing.JFrame {
             jTextField1.setText(""); 
             jPasswordField1.setText("");
         }
-
         
         //VALIDACION DE CONTRASEÑA
         Registrador reg = new Registrador();
