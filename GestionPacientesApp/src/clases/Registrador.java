@@ -38,47 +38,70 @@ public class Registrador {
         return resultado;
     }
     
-//    public void RegistrarPacienteAdmin(Paciente p) {
-//        MysqlDataSource mds = getDataSource();
-//        
-//        try {
-//            Connection con = mds.getConnection();
-//            PreparedStatement ps = con.prepareStatement("INSERT INTO pacientes VALUES (NULL,?,?,?)");
-//            ps.setString(1, p.getNombre());
-//            ps.setString(2, p.getTipo());
-//            ps.setInt(3, p.getVida());
-//            ps.executeUpdate();
-//            
-//        } catch (Exception e) {
-//            System.out.println("El programa falló satisfactoriamente.");
-//            System.out.println(e.toString());
-//        }
-//    }
-//    
-//    public ArrayList<Pokemon> ListarPokemones() {
-//        ArrayList<Pokemon> lista = new ArrayList<>();
-//        MysqlDataSource mds = getDataSource();
-//        
-//        try {
-//            Connection con = mds.getConnection();
-//            Statement s = con.createStatement();
-//            ResultSet rs = s.executeQuery("SELECT * FROM pokemones");
-//            
-//            while (rs.next()) {
-//                Pokemon p = new Pokemon();
-//                p.setCodigo(rs.getInt("codigo"));
-//                p.setNombre(rs.getString("nombre"));
-//                p.setTipo(rs.getString("tipo"));
-//                p.setVida(rs.getInt("vida"));
-//                
-//                lista.add(p);
-//            }
-//            
-//        } catch (Exception e) {
-//            System.out.println("El programa falló satisfactoriamente.");
-//            System.out.println(e.toString());
-//        }
-//        
-//        return lista;
-//    }
+    public void RegistrarPacienteAdmin(Paciente p) {
+        MysqlDataSource mds = getDataSource();
+        
+        try {
+            Connection con = mds.getConnection();
+            PreparedStatement ps = con.prepareStatement("INSERT INTO pacientes VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?)");
+            ps.setString(1, p.getNombre());
+            ps.setString(2, p.getDni());
+            ps.setInt(3, p.getEdad());
+            ps.setString(4, p.getSexo());
+            ps.setString(5, p.getTelefono());
+            ps.setString(6, p.getCorreo());
+            ps.executeUpdate();
+            
+        } catch (Exception e) {
+            System.out.println("El programa falló.");
+            System.out.println(e.toString());
+        }
+    }
+    
+    public void RegistrarPacienteEnfer(Paciente p) {
+        MysqlDataSource mds = getDataSource();
+        
+        try {
+            Connection con = mds.getConnection();
+            PreparedStatement ps = con.prepareStatement("INSERT INTO pacientes VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?)");
+            ps.setString(1, p.getNombre());
+            ps.setString(2, p.getDni());
+            ps.setInt(3, p.getEdad());
+            ps.setString(4, p.getSexo());
+            ps.setString(5, p.getTelefono());
+            ps.setString(6, p.getCorreo());
+            ps.executeUpdate();
+            
+        } catch (Exception e) {
+            System.out.println("El programa falló.");
+            System.out.println(e.toString());
+        }
+    }
+    
+    public ArrayList<Pokemon> ListarPokemones() {
+        ArrayList<Pokemon> lista = new ArrayList<>();
+        MysqlDataSource mds = getDataSource();
+        
+        try {
+            Connection con = mds.getConnection();
+            Statement s = con.createStatement();
+            ResultSet rs = s.executeQuery("SELECT * FROM pokemones");
+            
+            while (rs.next()) {
+                Pokemon p = new Pokemon();
+                p.setCodigo(rs.getInt("codigo"));
+                p.setNombre(rs.getString("nombre"));
+                p.setTipo(rs.getString("tipo"));
+                p.setVida(rs.getInt("vida"));
+                
+                lista.add(p);
+            }
+            
+        } catch (Exception e) {
+            System.out.println("El programa falló satisfactoriamente.");
+            System.out.println(e.toString());
+        }
+        
+        return lista;
+    }
 }
