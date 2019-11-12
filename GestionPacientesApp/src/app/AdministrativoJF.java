@@ -4,7 +4,8 @@ import javax.swing.JDesktopPane;
 import FramesAdmin.*;
 import javax.swing.JMenu;
 import javax.swing.JOptionPane;
-
+import java.awt.*;
+import javax.swing.ImageIcon;
 public class AdministrativoJF extends javax.swing.JFrame {
 
     public AdministrativoJF() {
@@ -32,7 +33,13 @@ public class AdministrativoJF extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        ImageIcon icon = new ImageIcon(this.getClass().getResource("/imagenes/enfermero.jpg"));
+        Image image = icon.getImage();
+        jDesktopPane1 = new javax.swing.JDesktopPane(){
+            public void paintComponent(Graphics g){
+                g.drawImage(image,0,0,getWidth(),getHeight(),this);
+            }
+        };
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();

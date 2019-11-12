@@ -9,10 +9,10 @@ public class LoginJF extends javax.swing.JFrame {
     /**
      * Creates new form LoginJF https://www.youtube.com/watch?v=9WBIAUNNKCE
      */
-    public LoginJF() {
+    public LoginJF() {        
         initComponents();
-    }
-
+    }    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

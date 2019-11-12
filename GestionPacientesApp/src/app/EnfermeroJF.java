@@ -2,7 +2,8 @@ package app;
 
 import FramesEnfermero.*;
 import javax.swing.JOptionPane;
-
+import java.awt.*;
+import javax.swing.ImageIcon;
 public class EnfermeroJF extends javax.swing.JFrame {
 
     /**
@@ -27,7 +28,14 @@ public class EnfermeroJF extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        ImageIcon icon = new ImageIcon(this.getClass().getResource("/imagenes/enfermero.jpg"));
+        Image image = icon.getImage();
+        jDesktopPane1 = new javax.swing.JDesktopPane(){
+
+            public void paintComponent(Graphics g){
+                g.drawImage(image,0,0,getWidth(),getHeight(),this);
+            }
+        };
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
