@@ -96,7 +96,7 @@ public class ListadoDoc extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -128,7 +128,7 @@ public class ListadoDoc extends javax.swing.JInternalFrame {
             
             //CONFIRMACION
             String nombre = (String)jTable1.getValueAt(fila, 1);
-            JOptionPane.showMessageDialog(this, "El registro del paciente " + nombre + " ha sido eliminado satisfactoriamente.");
+            JOptionPane.showMessageDialog(this, "El registro del paciente ha sido eliminado satisfactoriamente.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -1,5 +1,8 @@
 package FramesAdmin;
 
+import clases.Paciente;
+import clases.Registrador;
+
 public class RegPacAdmin extends javax.swing.JInternalFrame {
 
     public RegPacAdmin() {
@@ -149,11 +152,35 @@ public class RegPacAdmin extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        //BOTON REGISTRAR
+        Paciente p = new Paciente();
+        Registrador reg = new Registrador();
+        
+        //TOMA DE DATOS
+        String nombre = jTextField1.getText();
+        String dni = jTextField1.getText();
+        int edad = Integer.valueOf(jTextField1.getText());
+        
+        String sexo = "Masculino";
+        if (jRadioButton2.isSelected()) {
+            sexo = "Femenino";
+        }
+        
+        String telefono = jTextField1.getText();
+        String correo = jTextField1.getText();
+        
+        
+        //ASIGNACION DE DATOS A PACIENTE
+        p.setNombre(nombre);    p.setDni(dni);      p.setEdad(edad);
+        p.setSexo(sexo);        p.setTelefono(telefono);
+        p.setCorreo(correo);
+        
+        
+        //REGISTRO DE PACIENTE EN BD
+        reg.RegistrarPacienteAdmin(p);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
