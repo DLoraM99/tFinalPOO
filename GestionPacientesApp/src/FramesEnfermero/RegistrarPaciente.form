@@ -67,8 +67,8 @@
                 <Column editable="true" title="DNI" type="java.lang.String"/>
                 <Column editable="true" title="Edad" type="java.lang.Integer"/>
                 <Column editable="true" title="Sexo" type="java.lang.String"/>
-                <Column editable="true" title="Talla" type="java.lang.Float"/>
                 <Column editable="true" title="Peso" type="java.lang.Float"/>
+                <Column editable="true" title="Talla" type="java.lang.Float"/>
                 <Column editable="true" title="Condicion" type="java.lang.String"/>
               </Table>
             </Property>

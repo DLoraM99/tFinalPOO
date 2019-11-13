@@ -44,13 +44,18 @@ public class Registrador {
         
         try {
             Connection con = mds.getConnection();
-            PreparedStatement ps = con.prepareStatement("INSERT INTO pacientes VALUES (NULL,?,?,?,?,?,?,NULL,NULL,NULL,NULL,NULL)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO pacientes VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?)");
             ps.setString(1, p.getNombre());
             ps.setString(2, p.getDni());
             ps.setInt(3, p.getEdad());
             ps.setString(4, p.getSexo());
             ps.setString(5, p.getTelefono());
             ps.setString(6, p.getCorreo());
+            ps.setFloat(7, p.getPeso());
+            ps.setFloat(8, p.getTalla());
+            ps.setString(9, p.getCondicion());
+            ps.setString(10, p.getEstado());
+            ps.setString(11, p.getNombDoctor());
             ps.executeUpdate();
             
         } catch (Exception e) {

@@ -14,7 +14,6 @@ public class Añadir extends javax.swing.JInternalFrame {
         jTextField3.setText(sex);
     }
     
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

@@ -1,11 +1,27 @@
 package FramesEnfermero;
 
+import clases.Paciente;
+import clases.Registrador;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class RegistrarPaciente extends javax.swing.JInternalFrame {
 
     public RegistrarPaciente() {
         initComponents();
+        
+        MostrarDatos();
+    }
+    
+    private void MostrarDatos() {
+        Registrador reg = new Registrador();        
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();  
+        model.setRowCount(0);
+        for (Paciente p : reg.ListarPacientes()) {
+            model.addRow(new Object[] { p.getCodigo(), p.getNombre(), p.getDni(), p.getEdad(),
+                                        p.getSexo(), p.getPeso(), p.getTalla(), p.getCondicion()
+            });
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -26,7 +42,7 @@ public class RegistrarPaciente extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Codigo", "Nombre", "DNI", "Edad", "Sexo", "Talla", "Peso", "Condicion"
+                "Codigo", "Nombre", "DNI", "Edad", "Sexo", "Peso", "Talla", "Condicion"
             }
         ) {
             Class[] types = new Class [] {
