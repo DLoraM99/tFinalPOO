@@ -12,6 +12,7 @@ public class Añadir extends javax.swing.JInternalFrame {
         jTextField1.setText(nomb);
         jTextField2.setText(String.valueOf(edad));
         jTextField3.setText(sex);
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -138,7 +139,7 @@ public class Añadir extends javax.swing.JInternalFrame {
         
         //ASIGNACION DE DATOS A PACIENTE
         p.setPeso(peso);    p.setTalla(talla);      p.setCondicion(condicion);
-        //p.setCodigo(cod);
+        //p.setCodigo(codigo);
         
         //REGISTRO DE PACIENTE EN BD
         reg.RegistrarPacienteEnfer(p);
