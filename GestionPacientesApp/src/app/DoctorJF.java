@@ -1,6 +1,6 @@
 package app;
 
-//import FramesDoctor.*;
+import FramesDoctor.*;
 import javax.swing.JOptionPane;
 import java.awt.*;
 import javax.swing.ImageIcon;
@@ -11,11 +11,11 @@ public class DoctorJF extends javax.swing.JFrame {
         initComponents();
     }
     
-    //private void Listado(){
-    //    Listado frame = new Listado();
-    //    jDesktopPane1.add(frame);
-    //    frame.moveToFront();
-    //}
+    private void ListadoDoc(){
+        ListadoDoc frame = new ListadoDoc();
+        jDesktopPane1.add(frame);
+        frame.moveToFront();
+    }
     
     private void AcercaDe(){
         AcercaDe frame = new AcercaDe();
@@ -153,7 +153,7 @@ public class DoctorJF extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         //VER LISTADO DE PACIENTES
-        //Listado();
+        ListadoDoc();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -168,7 +168,7 @@ public class DoctorJF extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //VER LISTADO DE PACIENTES
-        //Listado();
+        ListadoDoc();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

@@ -33,6 +33,7 @@ public class PacientesXDoctor extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Listado de Pacientes");
+        setVisible(true);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
