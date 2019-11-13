@@ -42,7 +42,6 @@ public class Añadir extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
 
         setClosable(true);
-        setMaximizable(true);
         setVisible(true);
 
         jLabel1.setText("Registro");
