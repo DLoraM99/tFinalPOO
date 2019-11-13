@@ -34,25 +34,6 @@ public class Registrador {
                     resultado = true;}
             }
         }
-        
-        //Pokemon p = new Pokemon();
-//        MysqlDataSource mds = getDataSource();        
-//        try {
-//            Connection con = mds.getConnection();
-//            PreparedStatement ps = con.prepareStatement("SELECT * FROM pokemones WHERE codigo = ?"); 
-//            ps.setInt(1, codigo);
-//            ResultSet rs = ps.executeQuery();
-//            while (rs.next()) {                
-//                p.setCodigo(rs.getInt("codigo"));
-//                p.setNombre(rs.getString("nombre"));
-//                p.setTipo(rs.getString("tipo"));
-//                p.setVida(rs.getInt("vida"));
-//            }
-//          
-//        } catch (Exception e) {
-//            System.out.println("El programa falló satisfactoriamente:");
-//            System.out.println(e.toString());
-//        }    
 
         return resultado;
     }
