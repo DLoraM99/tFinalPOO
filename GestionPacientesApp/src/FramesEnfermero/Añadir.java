@@ -4,7 +4,8 @@ import clases.Paciente;
 import clases.Registrador;
 
 public class Añadir extends javax.swing.JInternalFrame {
-
+    int codigo;
+    
     public Añadir(int codigo, String nomb, int edad, String sex) {
         initComponents();
         
@@ -139,7 +140,7 @@ public class Añadir extends javax.swing.JInternalFrame {
         
         //ASIGNACION DE DATOS A PACIENTE
         p.setPeso(peso);    p.setTalla(talla);      p.setCondicion(condicion);
-        //p.setCodigo(codigo);
+        p.setCodigo(codigo);
         
         //REGISTRO DE PACIENTE EN BD
         reg.RegistrarPacienteEnfer(p);
