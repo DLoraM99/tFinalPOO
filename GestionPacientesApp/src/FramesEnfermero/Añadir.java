@@ -138,6 +138,7 @@ public class Añadir extends javax.swing.JInternalFrame {
         
         //ASIGNACION DE DATOS A PACIENTE
         p.setPeso(peso);    p.setTalla(talla);      p.setCondicion(condicion);
+        //p.setCodigo(cod);
         
         //REGISTRO DE PACIENTE EN BD
         reg.RegistrarPacienteEnfer(p);
