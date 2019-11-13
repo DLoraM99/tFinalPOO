@@ -34,6 +34,25 @@ public class Registrador {
                     resultado = true;}
             }
         }
+        
+        //Pokemon p = new Pokemon();
+//        MysqlDataSource mds = getDataSource();        
+//        try {
+//            Connection con = mds.getConnection();
+//            PreparedStatement ps = con.prepareStatement("SELECT * FROM pokemones WHERE codigo = ?"); 
+//            ps.setInt(1, codigo);
+//            ResultSet rs = ps.executeQuery();
+//            while (rs.next()) {                
+//                p.setCodigo(rs.getInt("codigo"));
+//                p.setNombre(rs.getString("nombre"));
+//                p.setTipo(rs.getString("tipo"));
+//                p.setVida(rs.getInt("vida"));
+//            }
+//          
+//        } catch (Exception e) {
+//            System.out.println("El programa falló satisfactoriamente:");
+//            System.out.println(e.toString());
+//        }    
 
         return resultado;
     }
@@ -44,7 +63,7 @@ public class Registrador {
         
         try {
             Connection con = mds.getConnection();
-            PreparedStatement ps = con.prepareStatement("INSERT INTO pacientes VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO pacientes VALUES (NULL,?,?,?,?,?,?,NULL,NULL,NULL,NULL,NULL)");
             ps.setString(1, p.getNombre());
             ps.setString(2, p.getDni());
             ps.setInt(3, p.getEdad());
@@ -63,16 +82,14 @@ public class Registrador {
     public void RegistrarPacienteEnfer(Paciente p) {
         MysqlDataSource mds = getDataSource();
         
-        try {
+        try {         
             Connection con = mds.getConnection();
-            PreparedStatement ps = con.prepareStatement("INSERT INTO pacientes VALUES (NULL,?,?,?,?,?,?,?,?,?,?,?)");
-            ps.setString(1, p.getNombre());
-            ps.setString(2, p.getDni());
-            ps.setInt(3, p.getEdad());
-            ps.setString(4, p.getSexo());
-            ps.setString(5, p.getTelefono());
-            ps.setString(6, p.getCorreo());
-            ps.executeUpdate();
+            PreparedStatement ps = con.prepareStatement("UPDATE pacientes SET peso = ?, talla = ?, condicion = ? WHERE codigo = ?");
+            ps.setFloat(1, p.getPeso());
+            ps.setFloat(2, p.getTalla());
+            ps.setString(3, p.getCondicion());
+            ps.setInt(4, p.getCodigo());
+            ps.executeUpdate(); 
             
         } catch (Exception e) {
             System.out.println("El programa falló.");
@@ -113,54 +130,19 @@ public class Registrador {
         
         return lista;
     }
-    
-//    public Pokemon obtenerPokemonPorId(int codigo) {
-//        Pokemon p = new Pokemon();
-//        MysqlDataSource mds = getDataSource();        
-//        try {
-//            Connection con = mds.getConnection();
-//            PreparedStatement ps = con.prepareStatement("SELECT * FROM pokemones WHERE codigo = ?"); 
-//            ps.setInt(1, codigo);
-//            ResultSet rs = ps.executeQuery();
-//            while (rs.next()) {                
-//                p.setCodigo(rs.getInt("codigo"));
-//                p.setNombre(rs.getString("nombre"));
-//                p.setTipo(rs.getString("tipo"));
-//                p.setVida(rs.getInt("vida"));
-//            }
-//          
-//        } catch (Exception e) {
-//            System.out.println("El programa falló satisfactoriamente:");
-//            System.out.println(e.toString());
-//        }        
-//        return p;
-//    }
 
-    public void LiberarPokemon(int codigo) {
-        MysqlDataSource mds = getDataSource();        
+
+    public void EliminarPaciente(int codigo) {
+        MysqlDataSource mds = getDataSource();
+        
         try {
             Connection con = mds.getConnection();
-            PreparedStatement ps = con.prepareStatement("DELETE FROM pokemones WHERE codigo = ?");
+            PreparedStatement ps = con.prepareStatement("DELETE FROM pacientes WHERE codigo = ?");
             ps.setInt(1, codigo);
-            ps.executeUpdate();            
+            ps.executeUpdate();
+            
         } catch (Exception e) {
-            System.out.println("El programa falló satisfactoriamente:");
-            System.out.println(e.toString());
-        }
-    }
-
-    public void actualizarPokemon(Pokemon p) {
-        MysqlDataSource mds = getDataSource();        
-        try {
-            Connection con = mds.getConnection();
-            PreparedStatement ps = con.prepareStatement("UPDATE pokemones SET nombre = ?, tipo = ?, vida = ? WHERE codigo = ?");
-            ps.setString(1, p.getNombre());
-            ps.setString(2, p.getTipo());
-            ps.setInt(3, p.getVida());
-            ps.setInt(4, p.getCodigo());
-            ps.executeUpdate();            
-        } catch (Exception e) {
-            System.out.println("El programa falló satisfactoriamente:");
+            System.out.println("El programa falló.");
             System.out.println(e.toString());
         }
     }
