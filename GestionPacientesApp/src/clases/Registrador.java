@@ -3,8 +3,6 @@ package clases;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Registrador {
     private final String serverName = "localhost";
@@ -70,7 +68,7 @@ public class Registrador {
         
         try {         
             Connection con = mds.getConnection();
-            PreparedStatement ps = con.prepareStatement("UPDATE pacientes SET peso = ?, talla = ?, condicion = ? WHERE codigo = ?");
+            PreparedStatement ps = con.prepareStatement("UPDATE pacientes SET peso = ?, talla = ?, condicion = ? WHERE pacientes.codigo = ?");
             ps.setFloat(1, p.getPeso());
             ps.setFloat(2, p.getTalla());
             ps.setString(3, p.getCondicion());

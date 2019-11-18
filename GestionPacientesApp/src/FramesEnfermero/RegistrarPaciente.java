@@ -31,6 +31,7 @@ public class RegistrarPaciente extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setClosable(true);
         setMaximizable(true);
@@ -62,6 +63,13 @@ public class RegistrarPaciente extends javax.swing.JInternalFrame {
             }
         });
 
+        jButton2.setText("Refrescar tabla");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -71,7 +79,8 @@ public class RegistrarPaciente extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 655, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)))
                 .addContainerGap())
         );
@@ -79,9 +88,11 @@ public class RegistrarPaciente extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18))
         );
 
@@ -89,27 +100,35 @@ public class RegistrarPaciente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      Integer fila = jTable1.getSelectedRow();
-        
+        Integer fila = jTable1.getSelectedRow();
+
         if (fila == -1) {
-            JOptionPane.showMessageDialog(this, "Selecciona a un Paciente.");         
-        }
-        else {
-            Integer codigo = (int)jTable1.getValueAt(fila, 0);
-            String nomb = (String)jTable1.getValueAt(fila, 1);
-            int edad = (int)jTable1.getValueAt(fila, 3);
-            String sex = (String)jTable1.getValueAt(fila, 4);
-            
-            Añadir frame = new Añadir(codigo, nomb, edad, sex);
+            JOptionPane.showMessageDialog(this, "Selecciona a un Paciente.");
+        } else {
+            Integer codigo = (int) jTable1.getValueAt(fila, 0);
+            String nomb = (String) jTable1.getValueAt(fila, 1);
+            String dni = (String) jTable1.getValueAt(fila, 2);
+            int edad = (int) jTable1.getValueAt(fila, 3);
+            String sex = (String) jTable1.getValueAt(fila, 4);
+
+            Añadir frame = new Añadir(codigo, nomb, dni, edad, sex);
 
             this.getDesktopPane().add(frame);
-            frame.moveToFront();  
+            frame.moveToFront();
+        }
         
+        MostrarDatos();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-}        
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //BOTON REFRESCAR TABLA
+        MostrarDatos();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+       
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
