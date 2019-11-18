@@ -3,7 +3,10 @@ package FramesEnfermero;
 import clases.Paciente;
 import clases.Registrador;
 import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 
 public class RegistrarPaciente extends javax.swing.JInternalFrame {
 
@@ -14,7 +17,26 @@ public class RegistrarPaciente extends javax.swing.JInternalFrame {
     }
     
     private void MostrarDatos() {
-        Registrador reg = new Registrador();        
+        Registrador reg = new Registrador();
+        //ANCHOS DE COLUMNA
+        TableColumnModel columnModel = jTable1.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(60);
+        columnModel.getColumn(1).setPreferredWidth(150);
+        columnModel.getColumn(2).setPreferredWidth(80);
+        columnModel.getColumn(3).setPreferredWidth(45);
+        columnModel.getColumn(4).setPreferredWidth(80);
+        columnModel.getColumn(5).setPreferredWidth(50);
+        columnModel.getColumn(6).setPreferredWidth(50);
+        columnModel.getColumn(7).setPreferredWidth(170);
+
+        //ALINEACIÓN DE CONTENIDO DE CELDAS
+        DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
+        tcr.setHorizontalAlignment(SwingConstants.CENTER);
+        columnModel.getColumn(0).setCellRenderer(tcr);
+        columnModel.getColumn(3).setCellRenderer(tcr);
+        columnModel.getColumn(5).setCellRenderer(tcr);
+        columnModel.getColumn(6).setCellRenderer(tcr);
+        
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();  
         model.setRowCount(0);
         for (Paciente p : reg.ListarPacientes()) {

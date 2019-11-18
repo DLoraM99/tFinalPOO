@@ -2,7 +2,10 @@ package FramesAdmin;
 
 import clases.Paciente;
 import clases.Registrador;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 
 public class PacientesXDoctor extends javax.swing.JInternalFrame {
 
@@ -12,7 +15,32 @@ public class PacientesXDoctor extends javax.swing.JInternalFrame {
     }
     
     private void MostrarDatos() {
-        Registrador reg = new Registrador();        
+        Registrador reg = new Registrador(); 
+        
+        //ANCHOS DE COLUMNA
+        TableColumnModel columnModel = jTable1.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(65);
+        columnModel.getColumn(1).setPreferredWidth(100);
+        columnModel.getColumn(2).setPreferredWidth(80);
+        columnModel.getColumn(3).setPreferredWidth(50);
+        columnModel.getColumn(4).setPreferredWidth(75);
+        columnModel.getColumn(5).setPreferredWidth(90);
+        columnModel.getColumn(6).setPreferredWidth(150);
+        columnModel.getColumn(7).setPreferredWidth(45);
+        columnModel.getColumn(8).setPreferredWidth(45);
+        columnModel.getColumn(9).setPreferredWidth(120);
+        columnModel.getColumn(10).setPreferredWidth(80);
+        columnModel.getColumn(11).setPreferredWidth(60);
+        
+        //ALINEACIÓN DE CONTENIDO DE CELDAS
+        DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
+        tcr.setHorizontalAlignment(SwingConstants.CENTER);
+        columnModel.getColumn(0).setCellRenderer(tcr);
+        columnModel.getColumn(3).setCellRenderer(tcr);
+        columnModel.getColumn(5).setCellRenderer(tcr);
+        columnModel.getColumn(7).setCellRenderer(tcr);
+        columnModel.getColumn(8).setCellRenderer(tcr);
+        
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();  
         model.setRowCount(0);
         for (Paciente p : reg.ListarPacientes()) {
@@ -67,7 +95,7 @@ public class PacientesXDoctor extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 928, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1)))
