@@ -3,6 +3,7 @@ package clases;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Registrador {
     private final String serverName = "localhost";
@@ -66,13 +67,22 @@ public class Registrador {
     public void RegistrarPacienteEnfer(Paciente p) {
         MysqlDataSource mds = getDataSource();
         
+        String estado = "En espera";
+        
+        String doctores[] = {"Julian Salvador", "Susana Ramirez", "Pedro Sanchez", "Maria Alvarez"};
+        Random rmd = new Random();
+        int indice = rmd.nextInt(3);
+        String doctor = doctores[indice];
+        
         try {         
             Connection con = mds.getConnection();
-            PreparedStatement ps = con.prepareStatement("UPDATE pacientes SET peso = ?, talla = ?, condicion = ? WHERE pacientes.codigo = ?");
+            PreparedStatement ps = con.prepareStatement("UPDATE pacientes SET peso = ?, talla = ?, condicion = ?, estado = ?, doctor = ? WHERE pacientes.codigo = ?");
             ps.setFloat(1, p.getPeso());
             ps.setFloat(2, p.getTalla());
             ps.setString(3, p.getCondicion());
-            ps.setInt(4, p.getCodigo());
+            ps.setString(4, estado);
+            ps.setString(5, doctor);
+            ps.setInt(6, p.getCodigo());
             ps.executeUpdate(); 
             
         } catch (Exception e) {

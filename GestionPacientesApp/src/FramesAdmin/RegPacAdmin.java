@@ -183,6 +183,14 @@ public class RegPacAdmin extends javax.swing.JInternalFrame {
         //REGISTRO DE PACIENTE EN BD
         reg.RegistrarPacienteAdmin(p);
         JOptionPane.showMessageDialog(this, "Paciente registrado exitosamente");
+        
+        
+        //BORRADO DE CAMPOS
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
